@@ -2,16 +2,19 @@ public class OOPSBannerApp {
 
     public static void main(String[] args) {
 
-        printLine(" ***** ", "  ", " ***** ", "  ", " ***** ", "  ", " ***** ");
-        printLine("*     *", " ", "*     *", " ", "*     *", " ", "*     *");
-        printLine("*     *", " ", "*     *", " ", "*     *", " ", "*     *");
-        printLine("*     *", " ", "*     *", " ", " ***** ", "  ", " ***** ");
-        printLine("*     *", " ", "*     *", " ", "*      ", " ", "*     *");
-        printLine("*     *", " ", "*     *", " ", "*      ", " ", "*     *");
-        printLine(" ***** ", "  ", " ***** ", " ", "*      ", "  ", " ***** ");
-    }
+        String[] banner = {
 
-    public static void printLine(String... parts) {
-        System.out.println(String.join("", parts));
+            String.join("", " ***** ", "  ", " ***** ", "  ", " ***** ", "  ", " ***** "),
+            String.join("", "*     *", " ", "*     *", " ", "*     *", " ", "*     *"),
+            String.join("", "*     *", " ", "*     *", " ", "*     *", " ", "*     *"),
+            String.join("", "*     *", " ", "*     *", " ", " ***** ", "  ", " ***** "),
+            String.join("", "*     *", " ", "*     *", " ", "*      ", " ", "*     *"),
+            String.join("", "*     *", " ", "*     *", " ", "*      ", " ", "*     *"),
+            String.join("", " ***** ", "  ", " ***** ", " ", "*      ", "  ", " ***** ")
+        };
+
+        for (String line : banner) {
+            System.out.println(line);
+        }
     }
 }
