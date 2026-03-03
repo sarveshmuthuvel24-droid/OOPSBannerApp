@@ -1,20 +1,21 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
 
-        String[] O = getO();
-        String[] P = getP();
-        String[] S = getS();
+        Map<Character, String[]> patternMap = createPatternMap();
 
-        // Print: O O P S  (OOPS)
-        for (int i = 0; i < O.length; i++) {
-            System.out.println(O[i] + "  " + O[i] + "  " + P[i] + "  " + S[i]);
-        }
+        renderBanner("OOPS", patternMap);
     }
 
-    // O pattern (7 lines)
-    public static String[] getO() {
-        return new String[]{
+    // 🔥 Create and store patterns in Map
+    public static Map<Character, String[]> createPatternMap() {
+
+        Map<Character, String[]> map = new HashMap<>();
+
+        map.put('O', new String[]{
                 " ***** ",
                 "*     *",
                 "*     *",
@@ -22,12 +23,9 @@ public class OOPSBannerApp {
                 "*     *",
                 "*     *",
                 " ***** "
-        };
-    }
+        });
 
-    // P pattern (7 lines)
-    public static String[] getP() {
-        return new String[]{
+        map.put('P', new String[]{
                 " ***** ",
                 "*     *",
                 "*     *",
@@ -35,12 +33,9 @@ public class OOPSBannerApp {
                 "*      ",
                 "*      ",
                 "*      "
-        };
-    }
+        });
 
-    // S pattern (7 lines)
-    public static String[] getS() {
-        return new String[]{
+        map.put('S', new String[]{
                 " ***** ",
                 "*      ",
                 "*      ",
@@ -48,6 +43,28 @@ public class OOPSBannerApp {
                 "      *",
                 "      *",
                 " ***** "
-        };
+        });
+
+        return map;
+    }
+
+    // 🔥 Render using nested loops
+    public static void renderBanner(String word, Map<Character, String[]> map) {
+
+        int height = 7;
+
+        for (int i = 0; i < height; i++) {
+
+            for (char ch : word.toCharArray()) {
+
+                String[] pattern = map.get(ch);
+
+                if (pattern != null) {
+                    System.out.print(pattern[i] + "  ");
+                }
+            }
+
+            System.out.println();
+        }
     }
 }
