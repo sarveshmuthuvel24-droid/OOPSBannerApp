@@ -2,12 +2,16 @@ public class OOPSBannerApp {
 
     public static void main(String[] args) {
 
-        System.out.println(" *****   *****   *****   ***** ");
-        System.out.println("*     * *     * *     * *     *");
-        System.out.println("*     * *     * *     * *     *");
-        System.out.println("*     * *     * *****   ***** ");
-        System.out.println("*     * *     * *       *     *");
-        System.out.println("*     * *     * *       *     *");
-        System.out.println(" *****   *****  *        ***** ");
+        printLine(" ***** ", "  ", " ***** ", "  ", " ***** ", "  ", " ***** ");
+        printLine("*     *", " ", "*     *", " ", "*     *", " ", "*     *");
+        printLine("*     *", " ", "*     *", " ", "*     *", " ", "*     *");
+        printLine("*     *", " ", "*     *", " ", " ***** ", "  ", " ***** ");
+        printLine("*     *", " ", "*     *", " ", "*      ", " ", "*     *");
+        printLine("*     *", " ", "*     *", " ", "*      ", " ", "*     *");
+        printLine(" ***** ", "  ", " ***** ", " ", "*      ", "  ", " ***** ");
+    }
+
+    public static void printLine(String... parts) {
+        System.out.println(String.join("", parts));
     }
 }
