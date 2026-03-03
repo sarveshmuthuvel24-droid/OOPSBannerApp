@@ -2,7 +2,7 @@ public class OOPSBannerApp {
 
     public static void main(String[] args) {
 
-        String[] banner = {
+        String[] banner = new String[] {
 
             String.join("", " ***** ", "  ", " ***** ", "  ", " ***** ", "  ", " ***** "),
             String.join("", "*     *", " ", "*     *", " ", "*     *", " ", "*     *"),
